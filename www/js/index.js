@@ -1,5 +1,7 @@
+var date = new Date();
 var lat = 0.0;
 var lon = 0.0;
+
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
   navigator.geolocation.getCurrentPosition(onSuccess, onError);
@@ -12,9 +14,10 @@ function onSuccess(position) {
   lon = position.coords.longitude;
 }
 
-function ShowPosition(){
- alert("Latitude: "+lat+" longitude: "+lon);
+function getInfoPosition(){
+ alert("Latitud: "+lat+"\nLongitud: "+lon+"\nFecha: "+date);
 }
+
 
 // onError Callback receives a PositionError object
 //
